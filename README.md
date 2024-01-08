@@ -1,6 +1,7 @@
-# Landing-page-CryptoHype
+# Landing pages
 
-Objectif : Intégrer la maquette
+Goal : front-end training
 
-temps découpage des icones via Figma : h
-temps d'intégration : 1h
+## CryptoHype
+
+
