@@ -10,8 +10,8 @@ function calculateCountdown (){
   const seconds = now.getSeconds();
   
   const countdownHours = 23-hours;
-  const countdownMinutes = 60-minutes;
-  const countdownSeconds = 60-seconds;
+  const countdownMinutes = 59-minutes;
+  const countdownSeconds = 59-seconds;
   
   const formattedHours = countdownHours < 10 ? `0${countdownHours}` : countdownHours;
   const formattedMinutes = countdownMinutes < 10 ? `0${countdownMinutes}` : countdownMinutes;
