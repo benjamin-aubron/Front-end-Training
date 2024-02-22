@@ -14,6 +14,12 @@
     <!-- Lib -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <style>
+      .scroll-lock {
+        overflow-y: hidden !important; /* Empêche le défilement vertical */
+      }
+    </style>
+
 </head>
 
 <body>
@@ -22,7 +28,7 @@
     <a href="" class="flex text-3xl font-bold text-[#008AF5] ml-6">
       reach.me
     </a>
-    <div class="hidden lg:flex items-center text-center">
+    <div class="hidden lg:flex items-center text-center active:bg-red-600 active:w-[600px] active:h-[100%]">
       <a href="" class="mx-4 text-lg text-gray-400 font-medium hover:text-gray-500 hover:border-b-4 border-[#008AF5] py-6 h-20">FEATURES</a>
       <a href="" class="mx-4 text-lg text-gray-400 font-medium hover:text-gray-500 hover:border-b-4 border-[#008AF5] py-6 h-20">PRICING</a>
       <a href="" class="mx-4 text-lg text-gray-400 font-medium hover:text-gray-500 hover:border-b-4 border-[#008AF5] py-6 h-20">ABOUT US</a>
@@ -32,12 +38,30 @@
     <div class="flex items-center">
       <button class="hidden sm:flex font-medium text-gray-400 hover:text-[#008AF5] border border-gray-300 hover:border-[#008AF5] rounded-full px-3 py-[1px] mr-2">Log in</button>
       <button class="hidden sm:flex font-bold text-[#008AF5] hover:text-white border border-gray-300 hover:bg-[#008AF5] rounded-full px-3 py-[1px] mr-4 lg:mr-6">Get started</button>
-      <button class="flex lg:hidden mr-6">
+      <button class="ham-button flex lg:hidden mr-6 active:bg-red-600">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 text-gray-400">
           <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
         </svg>
       </button>
     </div>
+    <div class="menu fixed lg:hidden flex flex-col text-center bg-white top-[80px] w-[100%] h-[100%] left-[100%] duration-150 ease-in-out pt-[100px]">
+      <a href="" class="mx-4 text-lg text-gray-400 font-medium hover:text-gray-700 hover:bg-gray-200 rounded-lg py-6 h-20">FEATURES</a>
+      <a href="" class="mx-4 text-lg text-gray-400 font-medium hover:text-gray-700 hover:bg-gray-200 rounded-lg py-6 h-20">PRICING</a>
+      <a href="" class="mx-4 text-lg text-gray-400 font-medium hover:text-gray-700 hover:bg-gray-200 rounded-lg py-6 h-20">ABOUT US</a>
+      <a href=""class="mx-4 text-lg text-gray-400 font-medium hover:text-gray-700 hover:bg-gray-200 rounded-lg py-6 h-20">BLOG</a>
+      <a href="" class="mx-4 text-lg text-gray-400 font-medium hover:text-gray-700 hover:bg-gray-200 rounded-lg py-6 h-20">CONTACT US</a>
+    </div>
+
+    <script>
+      const hamButton = document.querySelector(".ham-button");
+      const menu = document.querySelector(".menu");
+
+      hamButton.addEventListener("click", () => {
+        hamButton.classList.toggle("active");
+        menu.classList.toggle("left-[0%]");
+        document.body.classList.toggle("scroll-lock");
+      });
+    </script>
 
   </header>
 
