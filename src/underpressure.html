@@ -20,8 +20,13 @@
 <body class="">
 
   <header class="flex items-center justify-between">
-    <a href="" class="flex items-center ml-[100px] px-3 h-[80px] text-[#2779a4] text-xl font-bold text-center leading-none">UNDER<br>PRESSURE</a>
-    <div class="flex justify-between items-center">
+    <button class="flex lg:hidden ml-[30px]">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-gray-700 w-8 h-8">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+      </svg>      
+    </button>
+    <a href="" class="flex items-center xl:ml-[100px] px-3 h-[80px] text-[#2779a4] text-xl font-bold text-center leading-none">UNDER<br>PRESSURE</a>
+    <div class="hidden lg:flex justify-between items-center">
       <a href="" class="flex items-center px-6 font-medium text-gray-800 text-lg hover:bg-gray-200 h-[80px]">COFFEE</a>
       <a href="" class="flex items-center px-6 font-medium text-gray-800 text-lg hover:bg-gray-200 h-[80px]">HOME</a>
       <a href="" class="flex items-center px-6 font-medium text-gray-800 text-lg hover:bg-gray-200 h-[80px]">COLD BREW</a>
@@ -29,18 +34,18 @@
       <a href="" class="flex items-center px-6 font-medium text-gray-800 text-lg hover:bg-gray-200 h-[80px]">SHOP</a>
       <a href="" class="flex items-center px-6 font-medium text-gray-800 text-lg hover:bg-gray-200 h-[80px]">LOGIN</a>
     </div>
-    <button class="mr-[100px]">
+    <button class="mr-[20px] xl:mr-[100px]">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
         <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
       </svg>      
     </button>
   </header>
-
   <section id="hero">
-    <img src="image/underpressure_hero_laptop.png" alt="pouring tea" class="w-full">
+    <img src="image/underpressure_hero_laptop.png" alt="pouring tea" class="hidden md:flex w-full">
+    <img src="image/underpressure_hero_mobile.png" alt="pouring tea" class="flex md:hidden w-full">
   </section>
 
-  <section id="about" class="mt-[150px]">
+  <section id="about" class="mt-[130px] mb-[60px]">
     <h2 class="text-center text-4xl font-semibold">ABOUT</h2>
     <hr class="w-[300px] mx-auto border-gray-400 my-2">
     <p class="text-gray-400 text-center font-medium text-xl">COFFEE BEANS & ROASTING</p>
@@ -68,16 +73,87 @@
         <button class="border border-black px-16 py-1 hover:bg-gray-100">See Detail !</button>
       </div>
     </div>
+  </section>
 
+  <section id="bakery" class="mb-[60px]">
+    <img src="image/underpressure_homemade_laptop.png" alt="bakery" class="w-full">
+    <h2 class="text-center text-4xl font-semibold mt-[130px]">DESSERT</h2>
+    <hr class="w-[300px] mx-auto border-gray-400 my-2">
+    <p class="text-gray-400 text-center font-medium text-xl">SWEETS & BRUNCH</p>
+    <div class="flex items-center justify-center">
+      <div class="flex flex-col items-center p-12">
+        <img src="image/underpressure_tiramisu.png" alt="coffee beans">
+        <p class="flex pt-4 pb-6 font-semibold text-gray-500">TIRAMISSO</p>
+      </div>
+      <div class="flex flex-col items-center p-12">
+        <img src="image/underpressure_cheesecake.png" alt="coffee beans">
+        <p class="flex pt-4 pb-6 font-semibold text-gray-500">CHEESE CAKE TART</p>
+      </div>
+      <div class="flex flex-col items-center p-12">
+        <img src="image/underpressure_poundcake.png" alt="coffee beans">
+        <p class="flex pt-4 pb-6 font-semibold text-gray-500">POUND CAKE</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="beans" class="mb-[60px]">
+    <img src="image/underpressure_roastedbeans_laptop.png" alt="fresh roasted beans" class="w-full">
+    <h2 class="text-center text-4xl font-semibold mt-[130px]">COLD BREW</h2>
+    <hr class="w-[300px] mx-auto border-gray-400 my-2">
+    <p class="text-gray-400 text-center font-medium text-xl">COLLECTION</p>
+    <div class="flex items-center justify-center">
+      <div class="flex flex-col items-center p-12">
+        <img src="image/underpressure_flavor.png" alt="coffee beans" class="w-[300px]">
+        <p class="flex pt-4 pb-6 font-semibold text-gray-500 text-lg">For Vivid Flavor</p>
+      </div>
+      <div class="flex flex-col items-center p-12">
+        <img src="image/underpressure_mechanism.png" alt="mechanism" class="w-[300px]">
+        <p class="flex pt-4 pb-6 font-semibold text-gray-500 text-lg ">Original Extraction Mechanism</p>
+      </div>
+      <div class="flex flex-col items-center p-12">
+        <img src="image/underpressure_coffee.png" alt="coffee" class="w-[300px]">
+        <p class="flex pt-4 pb-6 font-semibold text-gray-500 text-lg">Cold Brew Coffee: The Next Wave</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="brew_coffee" class="mb-[200px]">
+    <img src="image/underpressure_brewcoffee_laptop.png" alt="cold brew coffee" class="w-full">
+    <h2 class="text-center text-4xl font-semibold mt-[130px]">SHOP</h2>
+    <hr class="w-[300px] mx-auto border-gray-400 my-2">
+    <p class="text-gray-400 text-center font-medium text-xl">ALL PRODUCTS</p>
+    <div class="flex flex-col items-center p-12">
+      <img src="image/underpressure_shop_laptop.png" alt="coffee beans" class="w-[60%]">
+      <button class="flex mt-10 py-2 px-16 font-semibold text-gray-500 border border-gray-600 hover:bg-gray-100">Go to shop</button>
+    </div>
 
   </section>
 
-  <footer class="">
+  <footer class="flex justify-start bg-[#f0f0f0] p-10">
+    <a href="" class="flex ml-[300px] px-3 h-[80px] text-[#2779a4] text-xl font-bold text-center leading-none">UNDER<br>PRESSURE</a>
+    <div class="flex flex-col pl-[100px]">
+      <p>Lorem ipsum dolor sit.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+      <p>Lorem ipsum dolor sit amet consectetur.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+    </div>
+    <div class="flex flex-col ml-[900px]">
+      <div class="font-medium text-lg">POLICY</div>
+      <a href="">Lorem, ipsum.</a>
+      <a href="">Lorem, ipsum.</a>
+      <a href="">Lorem, ipsum.</a>
+    </div>
+    <div class="flex flex-col ml-[100px]">
+      <div class="font-medium text-lg">CONTACT</div>
+      <a href="">Lorem, ipsum.</a>
+      <a href="">Lorem, ipsum.</a>
+    </div>
+
   </footer>
 
 <!-- <table>
   <tr>
-    <td>Temps total : 1h30</td>
+    <td>Temps total : 3h00</td>
     <td>Figma : 1h</td>
     <td>Javascript : 0</td>
     <td>Responsive : 0</td>
