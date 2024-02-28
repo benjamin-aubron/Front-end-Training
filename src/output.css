@@ -1160,10 +1160,6 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.flex-row {
-  flex-direction: row;
-}
-
 .flex-col {
   flex-direction: column;
 }
@@ -1618,34 +1614,14 @@ video {
   padding-bottom: 1px;
 }
 
-.py-\[48px\] {
-  padding-top: 48px;
-  padding-bottom: 48px;
+.py-\[33px\] {
+  padding-top: 33px;
+  padding-bottom: 33px;
 }
 
 .py-\[50px\] {
   padding-top: 50px;
   padding-bottom: 50px;
-}
-
-.py-\[38px\] {
-  padding-top: 38px;
-  padding-bottom: 38px;
-}
-
-.py-\[34px\] {
-  padding-top: 34px;
-  padding-bottom: 34px;
-}
-
-.py-\[32px\] {
-  padding-top: 32px;
-  padding-bottom: 32px;
-}
-
-.py-\[33px\] {
-  padding-top: 33px;
-  padding-bottom: 33px;
 }
 
 .pb-1 {
@@ -2181,6 +2157,10 @@ video {
     margin-left: 7rem;
   }
 
+  .md\:ml-6 {
+    margin-left: 1.5rem;
+  }
+
   .md\:ml-\[20px\] {
     margin-left: 20px;
   }
@@ -2215,10 +2195,6 @@ video {
 
   .md\:mt-\[40px\] {
     margin-top: 40px;
-  }
-
-  .md\:ml-6 {
-    margin-left: 1.5rem;
   }
 
   .md\:flex {
@@ -2382,10 +2358,6 @@ video {
     flex-direction: row;
   }
 
-  .lg\:flex-col {
-    flex-direction: column;
-  }
-
   .lg\:justify-between {
     justify-content: space-between;
   }
@@ -2440,6 +2412,10 @@ video {
     top: 46px;
   }
 
+  .xl\:ml-\[10\%\] {
+    margin-left: 10%;
+  }
+
   .xl\:ml-\[100px\] {
     margin-left: 100px;
   }
@@ -2454,18 +2430,6 @@ video {
 
   .xl\:mt-32 {
     margin-top: 8rem;
-  }
-
-  .xl\:ml-\[\] {
-    margin-left: ;
-  }
-
-  .xl\:ml-\[300px\] {
-    margin-left: 300px;
-  }
-
-  .xl\:ml-\[10\%\] {
-    margin-left: 10%;
   }
 
   .xl\:flex {
