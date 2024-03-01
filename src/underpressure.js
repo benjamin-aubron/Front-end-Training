@@ -1,7 +1,7 @@
 
 
 document.addEventListener("DOMContentLoaded", function() {
-  //Initialisation on document loaded - carousel = about1
+  //Initialisation on document loaded -> carousel = about1
   const carousel = document.getElementById("carousel")
   const about1 = document.getElementById("about1");
 
@@ -36,6 +36,122 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     carousel.appendChild(previousCard.cloneNode(true));
   })
+
+})
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  //Initialisation on document loaded -> brew_left = none, brew_center = beans1, brew_right = beans2
+  const carouselBrewLeft = document.getElementById("carousel_brew_left")
+  const carouselBrewCenter = document.getElementById("carousel_brew_center")
+  const carouselBrewRight = document.getElementById("carousel_brew_right")
+  const beans1 = document.getElementById("beans1");
+  const beans2 = document.getElementById("beans2");
+  const rightButton = document.getElementById("btn_right_brew")
+  const leftButton = document.getElementById("btn_left_brew")
+  
+  carouselBrewCenter.appendChild(beans1.cloneNode(true));
+  carouselBrewRight.appendChild(beans2.cloneNode(true));
+  leftButton.classList.add("hidden")
+
+ 
+  //Click on btn_right_brew
+  document.getElementById("btn_right_brew").addEventListener("click",function () {
+    
+    //Carousel center
+    const cardIdNumberCenter = carouselBrewCenter.lastChild.id.slice(-1);
+    while (carouselBrewCenter.firstChild) {
+      carouselBrewCenter.removeChild(carouselBrewCenter.firstChild);
+    }
+    const nextCardIdNumberCenter = parseInt(cardIdNumberCenter) + 1;
+    const nextCardCenter = document.getElementById("beans"+nextCardIdNumberCenter.toString())
+    carouselBrewCenter.appendChild(nextCardCenter.cloneNode(true));
+
+    //Carousel right
+    if (carouselBrewRight.hasChildNodes()) {
+      const currentCardIdNumberRight = carouselBrewRight.lastChild.id.slice(-1);
+      while (carouselBrewRight.firstChild) {
+        carouselBrewRight.removeChild(carouselBrewRight.firstChild);
+      }
+      if (currentCardIdNumberRight < 3) {
+        const nextCardIdNumberRight = parseInt(currentCardIdNumberRight) + 1;
+        const nextCardRight = document.getElementById("beans"+nextCardIdNumberRight.toString())
+        carouselBrewRight.appendChild(nextCardRight.cloneNode(true));
+      }
+    }
+
+    //Carousel left
+    const cardIdNumberLeft = carouselBrewCenter.lastChild.id.slice(-1)-1;
+    if (cardIdNumberLeft > 0) {
+      if (carouselBrewLeft.hasChildNodes()) {
+        while (carouselBrewLeft.firstChild) {
+          carouselBrewLeft.removeChild(carouselBrewLeft.firstChild);
+        }
+        if (cardIdNumberLeft < 3) {
+          const cardLeft = document.getElementById("beans"+parseInt(cardIdNumberLeft).toString())
+          carouselBrewLeft.appendChild(cardLeft.cloneNode(true));
+        }
+      } else {
+        if (cardIdNumberLeft < 3) {
+          const cardLeft = document.getElementById("beans"+parseInt(cardIdNumberLeft).toString())
+          carouselBrewLeft.appendChild(cardLeft.cloneNode(true));
+        }
+      }
+    }
+
+    if (nextCardIdNumberCenter == 2) {
+      leftButton.classList.remove("hidden");
+    } else if (nextCardIdNumberCenter == 3){
+      rightButton.classList.add("hidden");
+    }
+
+  })
+
+
+  //Click on btn_left_brew
+  document.getElementById("btn_left_brew").addEventListener("click",function () {
+  
+    //Carousel center
+    const cardIdNumberCenter = carouselBrewCenter.lastChild.id.slice(-1);
+    while (carouselBrewCenter.firstChild) {
+      carouselBrewCenter.removeChild(carouselBrewCenter.firstChild);
+    }
+    const nextCardIdNumberCenter = parseInt(cardIdNumberCenter) - 1;
+    const nextCardCenter = document.getElementById("beans"+nextCardIdNumberCenter.toString())
+    carouselBrewCenter.appendChild(nextCardCenter.cloneNode(true));
+
+    //Carousel right
+    const cardIdNumberRight = parseInt(cardIdNumberCenter) + 1;
+    while (carouselBrewRight.firstChild) {
+      carouselBrewRight.removeChild(carouselBrewRight.firstChild);
+    }
+    const nextCardIdNumberRight = cardIdNumberRight - 1;
+    const nextCardRight = document.getElementById("beans"+nextCardIdNumberRight.toString())
+    carouselBrewRight.appendChild(nextCardRight.cloneNode(true));
+
+    // //Carousel left
+    const cardIdNumberLeft = parseInt(cardIdNumberCenter) - 2;
+    if (cardIdNumberLeft > 0) {
+      while (carouselBrewLeft.firstChild) {
+        carouselBrewLeft.removeChild(carouselBrewLeft.firstChild);
+      }
+      const cardLeft = document.getElementById("beans"+parseInt(cardIdNumberLeft).toString())
+      carouselBrewLeft.appendChild(cardLeft.cloneNode(true));
+    } else {
+      while (carouselBrewLeft.firstChild) {
+        carouselBrewLeft.removeChild(carouselBrewLeft.firstChild);
+      }
+    }
+
+    if (nextCardIdNumberCenter == 1) {
+      leftButton.classList.add("hidden");
+    } else if (nextCardIdNumberCenter == 2){
+      rightButton.classList.remove("hidden");
+    }
+
+  })
+  
+
 
 })
 

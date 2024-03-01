@@ -9,7 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="robots" content="all">
-    <link rel="icon" href="/image/underpressure_logo.png" />
 
     <!-- Lib -->
     <link rel="stylesheet" href="./output.css">
@@ -116,44 +115,40 @@
     <h2 class="text-center text-4xl font-semibold mt-[130px]">COLD BREW</h2>
     <hr class="w-[300px] mx-auto border-gray-400 my-2">
     <p class="text-gray-400 text-center font-medium text-xl">COLLECTION</p>
-    <div class="hidden md:flex items-center justify-center">
-      <div class="flex flex-col items-center p-12">
+    <div class="hidden md:flex justify-center">
+      <div class="flex flex-col items-center p-0 md:p-12" id="beans1">
         <img src="image/underpressure_flavor.png" alt="coffee beans" class="w-[300px]">
         <p class="flex pt-4 pb-6 font-semibold text-gray-500 text-lg">For Vivid Flavor</p>
       </div>
-      <div class="flex flex-col items-center p-12">
+      <div class="flex flex-col items-center p-0 md:p-12" id="beans2">
         <img src="image/underpressure_mechanism.png" alt="mechanism" class="w-[300px]">
         <p class="flex pt-4 pb-6 font-semibold text-gray-500 text-lg ">Original Extraction Mechanism</p>
       </div>
-      <div class="flex flex-col items-center p-12">
+      <div class="flex flex-col items-center p-0 md:p-12" id="beans3">
         <img src="image/underpressure_coffee.png" alt="coffee" class="w-[300px]">
         <p class="flex pt-4 pb-6 font-semibold text-gray-500 text-lg">Cold Brew Coffee: The Next Wave</p>
       </div>
     </div>
-    <div class="">
-      <div class="flex items-center justify-between">
-        <button class="btn_left_brew">left</button>
-        <button class="btn_right_brew">right</button>
+    <div class="md:hidden">
+      <div class="grid grid-cols-4 overflow-clip">
+        <div class="col-span-1 -ml-[150%] blur-[2px] scale-90" id="carousel_brew_left">
+        </div>
+        <div class="col-span-2" id="carousel_brew_center">
+        </div>
+        <div class="col-span-1 -mr-[150%] blur-[2px] scale-90" id="carousel_brew_right">
+        </div>
       </div>
-      <div class="">
-        <div class="carousel_brew_left">
-          <div class="flex flex-col items-center">
-            <img src="image/underpressure_flavor.png" alt="coffee beans" class="w-[300px]">
-            <p class="flex pt-4 pb-6 font-semibold text-gray-500 text-lg">For Vivid Flavor</p>
-          </div>
-        </div>
-        <div class="carousel_brew_center">
-          <div class="flex flex-col items-center">
-            <img src="image/underpressure_flavor.png" alt="coffee beans" class="w-[300px]">
-            <p class="flex pt-4 pb-6 font-semibold text-gray-500 text-lg">For Vivid Flavor</p>
-          </div>
-        </div>
-        <div class="carousel_brew_right">
-          <div class="flex flex-col items-center">
-            <img src="image/underpressure_flavor.png" alt="coffee beans" class="w-[300px]">
-            <p class="flex pt-4 pb-6 font-semibold text-gray-500 text-lg">For Vivid Flavor</p>
-          </div>
-        </div>
+      <div class="relative flex items-center">
+        <button class="absolute p-4 bg-cyan-500 rounded-full left-0" id="btn_left_brew">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+          </svg>
+        </button>
+        <button class="absolute p-4 bg-cyan-500 rounded-full right-0" id="btn_right_brew">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-12 h-12">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+          </svg> 
+        </button>
       </div>
     </div>
 
